@@ -1,0 +1,203 @@
+/* App.css */
+
+/* Navigation Bar Styling */
+nav {
+  background-color: #333; /* Dark background color for the navigation bar */
+  padding: 10px 20px; /* Padding around the links */
+}
+/* Apply colors to various elements */
+.pokemon-details h1 {
+  color: #333; /* Dark text color for the Pokémon name */
+}
+
+.stats h2,
+.abilities h2 {
+  color: #3b5998; /* Blue color for section headers */
+}
+
+.stats li,
+.abilities li,
+.additional-info p {
+  color: #666; /* Dark gray color for details */
+}
+
+.back-button {
+  background-color: #4fd98d; /* Red color for back button */
+}
+
+.back-button:hover {
+  background-color: #0f5c42; /* Darker red color on hover */
+}
+
+
+
+/* Other CSS remains unchanged */
+/* Navigation Bar Styling ... */
+
+
+nav a {
+  color: white; /* Text color for links */
+  text-decoration: none; /* Remove underline from links */
+  margin-right: 20px; /* Add some space between links */
+  font-size: 16px; /* Adjust font size */
+  font-weight: bold; /* Make the font bold */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Underline links on hover */
+}
+
+/* Layout Container Styling */
+.layout-container {
+  max-width: 800px;
+  margin: 20px auto; /* Center the container */
+  padding: 30px; /* Increase padding for better spacing */
+  background-color: #f0f0f0; /* Change background color */
+  font-family: Arial, sans-serif; /* Set the font family */
+}
+
+/* Loading spinner */
+.spinner {
+  margin: 20px auto; /* Center the spinner */
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3b5998;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pokemon grid */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column width */
+  gap: 20px;
+  justify-items: center; /* Align grid items horizontally to the center */
+  align-items: center; /* Align grid items vertically to the center */
+}
+
+/* Pokemon item */
+.pokemon-item {
+  cursor: pointer;
+  width: 100%; /* Make each item take up full width */
+  text-align: center; /* Align text to the center */
+}
+
+.pokemon-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  transition: transform 0.2s ease; /* Add transition for hover effect */
+}
+
+.pokemon-item img:hover {
+  transform: scale(1.05); /* Scale up image on hover */
+}
+
+.pokemon-item p {
+  margin-top: 10px;
+  color: #666; /* Text color */
+  text-align: center; /* Align text to the center */
+}
+
+/* Footer buttons */
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+footer button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b5998;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+  background-color: #2c437c; /* Darker background color on hover */
+}
+
+footer button:disabled {
+  background-color: #ccc; /* Disabled button color */
+  cursor: not-allowed;
+}
+
+footer button.back-button {
+  background-color: #d9534f; /* Highlight color for back button */
+}
+
+footer button.back-button:hover {
+  background-color: #c9302c; /* Darker highlight color on hover */
+}
+.pokemon-details {
+  text-align: center;
+}
+
+.pokemon-details h1 {
+  margin-top: 0; /* Remove default margin */
+}
+
+.pokemon-details img {
+  width: 300px; /* Set width of the image */
+  height: auto;
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  margin-bottom: 20px; /* Add space between image and details */
+}
+
+.details-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap if needed */
+  justify-content: space-around; /* Distribute items evenly along the main axis */
+}
+
+.stats,
+.abilities,
+.additional-info {
+  width: 30%; /* Set initial size of columns */
+  text-align: left;
+  margin-bottom: 20px; /* Add space between columns */
+}
+
+.back-button {
+  width: 100%; /* Make the button take full width */
+  margin-top: 20px; /* Add space above button */
+}
+/* Adjust image size */
+.pokemon-item img,
+.pokemon-details img {
+  width: 130px; /* Reduce image width */
+}
+/* Add border behind the rounded part on hover */
+.pokemon-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.pokemon-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent; /* Set initial border style */
+  border-radius: 10px; /* Add border-radius to match the image */
+  transition: border-color 0.5s ease; /* Smooth transition effect for border color */
+  box-sizing: border-box; /* Ensure that border is included in the width and height */
+}
+
+.pokemon-item:hover::before {
+  border-color: #9bc4b0; /* Set border color on hover */
+}

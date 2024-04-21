@@ -1,0 +1,53 @@
+/* CSS for About Me page */
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 50px auto; /* Center the container vertically and horizontally */
+    padding: 20px;
+    background-color: #fff; /* Add a white background to the container */
+    border-radius: 10px; /* Add some border radius for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Heading */
+h1 {
+    color: #ff4500; /* Pokémon hunter orange */
+    text-align: center; /* Center the heading */
+    font-size: 36px; /* Increase font size */
+    margin-bottom: 20px; /* Add some space below the heading */
+    text-transform: uppercase; /* Convert text to uppercase */
+}
+
+/* Content */
+.content {
+    padding: 20px 0; /* Add padding to the content */
+}
+
+/* Paragraph */
+p {
+    line-height: 1.8; /* Increase line height for better readability */
+    font-size: 18px; /* Increase font size */
+    color: #555; /* Darken text color */
+}
+
+/* Links */
+a {
+    color: #007bff; /* Pokémon hunter blue */
+    text-decoration: none;
+    font-weight: bold; /* Make links bold */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darken link color on hover */
+}
