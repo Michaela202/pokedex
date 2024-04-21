@@ -57,70 +57,54 @@ function App() {
   };
 
   const handlePokemonClick = (pokemon) => {
-    setIsLoading(true);
     setSelectedPokemon(pokemon);
-    setTimeout(() => {
-      setSelectedPokemon(pokemon); // Show selected Pokemon details after animation
-      setIsLoading(false);
-    }, 1000); // Wait for animation to finish (1s)
   };
 
   return (
     <div className="layout-container">
       <header>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <React.Fragment>
-            {selectedPokemon ? (
-              <div className="pokemon-details">
-              <h1>{selectedPokemon.name}</h1>
-              <img src={selectedPokemon.imageUrl} alt={selectedPokemon.name} />
-              <div className="details-container">
-                <div className="stats">
-                  <h2>Stats:</h2>
-                  <ul>
-                    {selectedPokemon.stats.map((stat, index) => (
-                      <li key={index}>
-                        {stat.stat.name}: {stat.base_stat}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="abilities">
-                  <h2>Abilities:</h2>
-                  <ul>
-                    {selectedPokemon.abilities.map((ability, index) => (
-                      <li key={index}>{ability}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="additional-info">
-                  <p>Height: {selectedPokemon.height}</p>
-                  <p>Weight: {selectedPokemon.weight}</p>
-                </div>
+        {selectedPokemon ? (
+          <div className="pokemon-details">
+            <h1>{selectedPokemon.name}</h1>
+            <img src={selectedPokemon.imageUrl} alt={selectedPokemon.name} />
+            <div className="details-container">
+              <div className="stats">
+                <h2>Stats:</h2>
+                <ul>
+                  {selectedPokemon.stats.map((stat, index) => (
+                    <li key={index}>
+                      {stat.stat.name}: {stat.base_stat}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <button className="back-button" onClick={() => setSelectedPokemon(null)}>Go Back</button>
+              <div className="abilities">
+                <h2>Abilities:</h2>
+                <ul>
+                  {selectedPokemon.abilities.map((ability, index) => (
+                    <li key={index}>{ability}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="additional-info">
+                <p>Height: {selectedPokemon.height}</p>
+                <p>Weight: {selectedPokemon.weight}</p>
+              </div>
             </div>
-            
-            ) : (
-              <div className="pokemon-list">
-                <h1>POKEDEX</h1>
-                <div className="grid-container">
-                  {isLoading ? (
-                    <p>Loading...</p>
-                  ) : (
-                    pokemonDetails.map((pokemon, index) => (
-                      <div key={index} className="pokemon-item" onClick={() => handlePokemonClick(pokemon)}>
-                        <img src={pokemon.imageUrl} alt={pokemon.name} />
-                        <p>{pokemon.name}</p>
-                      </div>
-                    ))
-                  )}
+            <button className="back-button" onClick={() => setSelectedPokemon(null)}>Go Back</button>
+          </div>
+        ) : (
+          <div className="pokemon-list">
+            <h1>POKEDEX</h1>
+            <div className="grid-container">
+              {pokemonDetails.map((pokemon, index) => (
+                <div key={index} className="pokemon-item" onClick={() => handlePokemonClick(pokemon)}>
+                  <img src={pokemon.imageUrl} alt={pokemon.name} />
+                  <p>{pokemon.name}</p>
                 </div>
-              </div>
-            )}
-          </React.Fragment>
+              ))}
+            </div>
+          </div>
         )}
       </header>
       <footer>
